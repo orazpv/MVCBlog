@@ -1,0 +1,15 @@
+﻿@model MvcBlog.Models.Comment
+@{
+    ViewBag.Title = "EditComment";
+}
+
+<p></p>
+<div class="form-control FormStyle">
+    <h4>Edit this Comment</h4><hr />
+    <form method="post" id="blogForm">
+        <input type="text" value="@Model.Blogger" name="Blogger" class="form-control" placeholder="What's your Name?" id="Blogger" /><br />
+        <textarea class="form-control" placeholder="Type the Blog" name="Msg" id="Msg">@Model.Msg</textarea><br />
+        <input type="button" onclick="blog.ValidComment()" value="Save" class="btn btn-info" />
+        <a href="~/Home/ViewBlog/@Model.BlogId" class="btn btn-info text-right">Cancel</a>
+    </form>
+</div>

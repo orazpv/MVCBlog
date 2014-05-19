@@ -1,0 +1,45 @@
+﻿@model List<MvcBlog.Models.Blog>
+@{
+    ViewBag.Title = "Home Page";
+}
+<!--List of Blogs-->
+@if (Model.Count == 0)
+{
+    <h3>No Blogs</h3>
+}
+else
+{
+    //List the blogs in a table
+    <br />
+    //The search Blog Module
+    <form method="post" class="form-inline">
+        <span style="font-size:larger">List of Blogs</span>
+        <input type="submit" class="btn btn-primary floatRight" />
+        <span class="floatRight">&nbsp;</span>
+        <input type="text" name="search" placeholder="Search Blogs" class="form-control floatRight" />
+    </form><br />
+    <table class="table table-hover form-control blogTable">
+        <tbody>
+            @foreach (var blog in Model)
+            {   
+                <tr>
+                    <td><a href="Home/ViewBlog/@blog.BlogId" title="View">@blog.BlogTitle</a></td>
+                    <td>@blog.Blogger</td>
+                    <td>@blog.BlogTime</td>
+                    <td><a href="Home/Edit/@blog.BlogId"  title="Edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="Home/Delete/@blog.BlogId" title="Delete"><span class="glyphicon glyphicon-remove"></span></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<!--Add Blog-->
+<div class="form-control addBlog" >
+    <h4>Add a Blog</h4>
+    <form method="post" id="blogForm">
+        <input type="text" name="Blogger" class="form-control" placeholder="What's your Name?" id="Blogger" /><br />
+        <input type="text" name="BlogTitle" class="form-control" placeholder="Blog Title" id="BlogTitle" /><br />
+        <textarea class="form-control" placeholder="Type the Blog" name="Msg" id="Msg"></textarea><br />
+        <input type="button" onclick="blog.Validate()" value="Add" class="btn btn-info" />
+    </form>
+</div>

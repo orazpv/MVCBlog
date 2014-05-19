@@ -1,0 +1,31 @@
+﻿.addBlog {
+    width:300px;
+    height:auto;
+    top:57%;
+    left:76%;
+    z-index:54;
+    position:fixed;
+}
+
+.addComment {
+    width:300px;
+    height:auto;
+    top:66%;
+    left:76%;
+    z-index:54;
+    position:fixed;
+}
+
+.blogTable{
+    width:600px;
+    height:auto
+}
+
+.floatRight{
+    float:right;
+}
+
+.FormStyle {
+    width:300px;
+    height:auto;
+}

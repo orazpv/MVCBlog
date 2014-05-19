@@ -1,0 +1,13 @@
+﻿@model MvcBlog.Models.Comment
+@{
+    ViewBag.Title = "Delete Comment";
+}
+
+<h2>Delete Comment</h2>
+<form method="post" action="~/Home/DeleteCommentSubmit/@Model.CommentId">
+    <h4>Are you sure you want to delete this Comment</h4>
+    <p><strong>@Model.Msg</strong></p>
+    <input type="submit" value="Yes" class="btn btn-danger" />
+    <a href="/" class="btn btn-success">No</a>
+</form>
+
